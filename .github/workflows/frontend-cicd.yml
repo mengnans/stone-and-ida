@@ -14,6 +14,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: test
+        run: |
+          echo "${{ env.test }}" \
+        with:
+          test: ${{ secrets.TEST }}
       - name: Configure AWS credentials for Special development environment
         uses: aws-actions/configure-aws-credentials@v1
         with:
